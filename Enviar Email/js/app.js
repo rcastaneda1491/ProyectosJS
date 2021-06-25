@@ -74,6 +74,7 @@ function enviarEmail(e) {
                formularioEnviar.reset();
           }, 5000);
      }, 3000);
+     resetFormulario();
 }
 
 function validarEmail(campo) {

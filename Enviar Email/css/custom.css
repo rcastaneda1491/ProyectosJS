@@ -1,7 +1,5 @@
 body {
-    background: #198160;
-    background: -webkit-linear-gradient(to right, #13395f, #138863);
-    background: linear-gradient(to right, #0f3861, #167255); 
+    background-color: #4d4d4d;
 }
 #contenido {
     background-color: white;
