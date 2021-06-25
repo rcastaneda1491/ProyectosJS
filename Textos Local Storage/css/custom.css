@@ -23,3 +23,15 @@ h1, h2 {
     margin: 0 auto;
     color: white;
 }
+
+#container-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+li{
+    border-bottom: 2px solid #c4c4c4;
+    padding-bottom: 5px;
+}
