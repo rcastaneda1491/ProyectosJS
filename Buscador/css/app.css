@@ -1,12 +1,10 @@
 body {
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-    font-family: 'Staatliches', cursive;
+    background-color: #8deccc;
 }
 html {
     font-size: 62.5%;
 }
 h1 {
-    font-family: 'Staatliches', cursive;
     font-size: 6rem;
     padding: 3rem 0;
     margin: 0;
@@ -14,12 +12,16 @@ h1 {
 .contenedor {
     background-color: white;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 10vh;
 }
 p {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
-h1, p {
+h2, h1{
+    color: #28423a;
+}
+
+h1, p, h2 {
     text-align: center;
 }
 form {
@@ -27,13 +29,10 @@ form {
     margin: 0 auto;
     padding: 4rem;
     background: white;
-    margin-bottom: 10rem;
-    font-family: Arial, Helvetica, sans-serif;
 }
 #app p{
     text-align: left!important;
     font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
 }
 #resultado p {
     margin: 0;

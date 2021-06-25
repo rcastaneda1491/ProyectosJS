@@ -6,6 +6,7 @@ const maximo = document.querySelector('#maximo');
 const puertas = document.querySelector('#puertas');
 const transmision = document.querySelector('#transmision');
 const color = document.querySelector('#color');
+const estado = document.querySelector('#estado');
 
 // crear los años
 const years = document.createElement('option');
@@ -28,7 +29,8 @@ const datosBusqueda = {
     maximo: '',
     puertas: '',
     transmision:'',
-    color:''
+    color:'',
+    estado:''
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -81,6 +83,13 @@ color.addEventListener('input', e => {
     filtrarAuto();
 });
 
+estado.addEventListener('input', e => {
+    datosBusqueda.estado = e.target.value
+    // Mandar llamar la función de filtrar Autos
+    filtrarAuto();
+});
+
+
 function limpiarHTML() {
     // Leer el elemento Resultado
     const contenedor = document.querySelector('#resultado');
@@ -101,7 +110,7 @@ function mostrarAutos(autos){
     autos.forEach(auto => {
         const autoHTML = document.createElement('p');
         autoHTML.innerHTML = `
-            <p>${auto.marca} ${auto.modelo} - ${auto.year} - ${auto.puertas} Puertas - Transmisión: ${auto.transmision} - Precio: ${auto.precio} - Color: ${auto.color}</p>
+            <p>${auto.marca} ${auto.modelo} - ${auto.year} - ${auto.puertas} Puertas - Transmisión: ${auto.transmision} - Precio: ${auto.precio} - Color: ${auto.color} -Estado: ${auto.estado}</p>
         `;
         contenedor.appendChild(autoHTML);
     })
@@ -116,9 +125,8 @@ function noResultado() {
 }
 
 function filtrarAuto() {
-   const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision).filter(filtrarColor);
+   const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision).filter(filtrarColor).filter(filtrarEstado);
 
-//    console.log(resultado);
    if(resultado.length){
         mostrarAutos(resultado);
    } else {
@@ -170,6 +178,13 @@ function filtrarTransmision(auto) {
 function filtrarColor(auto){
     if(datosBusqueda.color){
         return auto.color === datosBusqueda.color;
+    } 
+    return  auto;
+}
+
+function filtrarEstado(auto){
+    if(datosBusqueda.estado){
+        return auto.estado === datosBusqueda.estado;
     } 
     return  auto;
 }
