@@ -2,6 +2,7 @@
 const email = document.querySelector('#email');
 const asunto = document.querySelector('#asunto');
 const mensaje = document.querySelector('#mensaje');
+const archivo = document.querySelector('#archivo');
 
 const btnEnviar = document.querySelector('#enviar');
 const formularioEnviar = document.querySelector('#enviar-mail');
@@ -15,6 +16,7 @@ function eventListeners() {
      email.addEventListener('blur', validarFormulario);
      asunto.addEventListener('blur', validarFormulario);
      mensaje.addEventListener('blur', validarFormulario);
+     archivo.addEventListener('blur', validarFormulario);
 
      formularioEnviar.addEventListener('submit', enviarEmail);
 
@@ -27,7 +29,6 @@ function inicioApp() {
 }
 
 function validarFormulario(e) {
-
      e.target.classList.remove('border-red-500');
 
      if (e.target.value.length > 0) {
@@ -41,7 +42,7 @@ function validarFormulario(e) {
           validarEmail(this);
      }
 
-     if (email.value !== '' && asunto.value !== '' && mensaje.value !== '') {
+     if (email.value !== '' && asunto.value !== '' && mensaje.value !== '' && archivo.files.length != 0) {
           btnEnviar.disabled = false;
           btnEnviar.classList.remove('opacity-50');
           btnEnviar.classList.remove('cursor-not-allowed');
@@ -50,7 +51,7 @@ function validarFormulario(e) {
 
 function resetFormulario(e) {
      formularioEnviar.reset();
-     e.preventDefault();
+     e.preventDefault(); 
 }
 
 function enviarEmail(e) {
