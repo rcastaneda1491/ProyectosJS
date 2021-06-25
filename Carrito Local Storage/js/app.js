@@ -62,7 +62,7 @@ function leerDatosCurso(curso) {
      }  else {
           articulosCarrito = [...articulosCarrito, infoCurso];
      }
-
+     console.log(articulosCarrito);
      carritoHTML();
      alert("Curso agregado correctamente");
 }

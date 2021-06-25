@@ -30,7 +30,7 @@ function agregarTweet(e) {
      }
 
      tweets = [...tweets, tweetObj];
-     
+     console.log(tweets);
      crearHTML();
 
      formulario.reset();
