@@ -34,6 +34,17 @@
                               >Año:</label>
                               <select  class="flex-1 bg-gray-100 p-3 appearance-none" id="year"></select>
                         </div>
+                        <div class="flex items-center mb-5">
+                          <label 
+                            class="font-bold  uppercase mr-2 w-20"
+                            for="estilo"
+                          >Estilo:</label>
+                          <select class="flex-1 bg-gray-100 p-3 appearance-none" id="estilo">
+                              <option value="">- Seleccionar -</option>
+                              <option value="sedan">Sedan</option>
+                              <option value="coupe">Coupe</option>
+                          </select>
+                      </div>
                         <fieldset>
                               <legend  class="font-bold  uppercase text-2xl text-center w-full">Tipo Seguro</legend>
 
@@ -42,7 +53,12 @@
                                       <label class="font-bold  uppercase mr-2">Básico</label>
                                           <input type="radio" name="tipo" value="basico" checked>
                                       </label>
-                                  </div>
+                                  </div><div>
+                                    <label class="font-bold  uppercase mr-2">Intermedio</label>
+                                        <input type="radio" name="tipo" value="intermedio">
+                                    </label>
+                                </div>
+
                                   <div>
                                       <label class="font-bold  uppercase mr-2">Completo</label>
                                           <input type="radio" name="tipo" value="completo">
