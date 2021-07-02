@@ -165,7 +165,7 @@ function nuevaCita(e) {
     const {mascota, tipo, propietario, telefono, fecha, hora, sintomas } = citaObj;
 
     // Validar
-    if( mascota === '' || tipo.value === '' || propietario === '' || telefono === '' || fecha === ''  || hora === '' || sintomas === '' ) {
+    if( mascota === '' || tipo === '' || propietario === '' || telefono === '' || fecha === ''  || hora === '' || sintomas === '' ) {
         ui.imprimirAlerta('Todos los mensajes son Obligatorios', 'error')
 
         return;

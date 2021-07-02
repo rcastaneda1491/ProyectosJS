@@ -1,4 +1,5 @@
 export const mascotaInput = document.querySelector('#mascota');
+export const tipoInput = document.querySelector('#tipo');
 export const propietarioInput = document.querySelector('#propietario');
 export const telefonoInput = document.querySelector('#telefono');
 export const fechaInput = document.querySelector('#fecha');

@@ -33,7 +33,7 @@ class UI {
         this.limpiarHTML();
 
         citas.forEach(cita => {
-            const {mascota, propietario, telefono, fecha, hora, sintomas, id } = cita;
+            const {mascota, tipo, propietario, telefono, fecha, hora, sintomas, id } = cita;
 
             const divCita = document.createElement('div');
             divCita.classList.add('cita', 'p-3');
@@ -43,6 +43,9 @@ class UI {
             const mascotaParrafo = document.createElement('h2');
             mascotaParrafo.classList.add('card-title', 'font-weight-bolder');
             mascotaParrafo.innerHTML = `${mascota}`;
+
+            const tipoParrafo = document.createElement('p');
+            tipoParrafo.innerHTML = `<span class="font-weight-bolder">Propietario: </span> ${tipo}`;
 
             const propietarioParrafo = document.createElement('p');
             propietarioParrafo.innerHTML = `<span class="font-weight-bolder">Propietario: </span> ${propietario}`;
@@ -74,6 +77,7 @@ class UI {
 
             // Agregar al HTML
             divCita.appendChild(mascotaParrafo);
+            divCita.appendChild(tipoParrafo);
             divCita.appendChild(propietarioParrafo);
             divCita.appendChild(telefonoParrafo);
             divCita.appendChild(fechaParrafo);

@@ -1,6 +1,6 @@
 import Citas from './classes/Citas.js'
 import UI from './classes/UI.js'
-import { mascotaInput, propietarioInput, telefonoInput, fechaInput, horaInput, sintomasInput, formulario } from './selectores.js';
+import { mascotaInput, tipoInput, propietarioInput, telefonoInput, fechaInput, horaInput, sintomasInput, formulario } from './selectores.js';
 
 
 const ui = new UI();
@@ -8,6 +8,7 @@ const administrarCitas = new Citas();
 
 const citaObj = {
     mascota: '',
+    tipo: '',
     propietario: '',
     telefono: '',
     fecha: '',
@@ -27,10 +28,10 @@ export function datosCita(e) {
 export function nuevaCita(e) {
     e.preventDefault();
 
-    const {mascota, propietario, telefono, fecha, hora, sintomas } = citaObj;
+    const {mascota, tipo, propietario, telefono, fecha, hora, sintomas } = citaObj;
 
     // Validar
-    if( mascota === '' || propietario === '' || telefono === '' || fecha === ''  || hora === '' || sintomas === '' ) {
+    if( mascota === '' || tipo == '' || propietario === '' || telefono === '' || fecha === ''  || hora === '' || sintomas === '' ) {
         ui.imprimirAlerta('Todos los mensajes son Obligatorios', 'error')
 
         return;
@@ -74,6 +75,7 @@ export function nuevaCita(e) {
 export function reiniciarObjeto() {
     // Reiniciar el objeto
     citaObj.mascota = '';
+    citaObj.tipo = '';
     citaObj.propietario = '';
     citaObj.telefono = '';
     citaObj.fecha = '';
@@ -90,10 +92,11 @@ export function eliminarCita(id) {
 
 export function cargarEdicion(cita) {
 
-    const {mascota, propietario, telefono, fecha, hora, sintomas, id } = cita;
+    const {mascota, tipo, propietario, telefono, fecha, hora, sintomas, id } = cita;
 
     // Reiniciar el objeto
     citaObj.mascota = mascota;
+    citaObj.tipo = tipo;
     citaObj.propietario = propietario;
     citaObj.telefono = telefono;
     citaObj.fecha = fecha
@@ -103,6 +106,7 @@ export function cargarEdicion(cita) {
 
     // Llenar los Inputs
     mascotaInput.value = mascota;
+    tipoInput.value = tipo;
     propietarioInput.value = propietario;
     telefonoInput.value = telefono;
     fechaInput.value = fecha;
