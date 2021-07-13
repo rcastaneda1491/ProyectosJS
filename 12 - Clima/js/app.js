@@ -67,6 +67,7 @@ function consultarAPI(ciudad, pais ) {
           mostrarError('Ciudad No Encontrada')
         } else {
           mostrarClima(datos)
+          console.log(datos);
         }
       })
       .catch(error => {
@@ -78,12 +79,14 @@ function mostrarClima(datos) {
 
   // Formatear el Clima...
 
-  const { name, main: { temp, temp_max, temp_min } } = datos;
+  const { name, main: { temp, temp_max, temp_min, humidity, feels_like} } = datos;
 
 
   const grados = KelvinACentigrados(temp);
   const min = KelvinACentigrados(temp_max);
   const max = KelvinACentigrados(temp_min);
+  const feels = KelvinACentigrados(feels_like);
+  const humedad = humidity;
 
   const nombreCiudad = document.createElement('p');
   nombreCiudad.innerHTML = `Clima en: ${name}`;
@@ -102,6 +105,13 @@ function mostrarClima(datos) {
   tempMinima.innerHTML = `Min: ${min} &#8451;`;
   tempMinima.classList.add('text-xl')
 
+  const feelsLike = document.createElement('p');
+  feelsLike.innerHTML = `Sensación: ${feels} &#8451;`;
+  feelsLike.classList.add('text-xl')
+  
+  const humedadact = document.createElement('p');
+  humedadact.innerHTML = `Humedad: ${humedad}`;
+  humedadact.classList.add('text-xl')
 
   const resultadoDiv = document.createElement('div');
   resultadoDiv.classList.add('text-center', 'text-white')
@@ -109,6 +119,8 @@ function mostrarClima(datos) {
   resultadoDiv.appendChild(actual);
   resultadoDiv.appendChild(tempMaxima);
   resultadoDiv.appendChild(tempMinima);
+  resultadoDiv.appendChild(feelsLike);
+  resultadoDiv.appendChild(humedadact);
 
   resultado.appendChild(resultadoDiv)
 }

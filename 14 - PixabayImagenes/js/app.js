@@ -76,16 +76,19 @@ function mostrarImagenes(imagenes, paginas ) {
     }
 
     imagenes.forEach( imagen => {
-
-        const { likes, views, previewURL, largeImageURL } = imagen;
+        console.log(imagen);
+        const { likes, views, downloads, comments, user, previewURL, largeImageURL } = imagen;
         resultado.innerHTML += `
             <div class="w-1/2 md:w-1/3 lg:w-1/4 mb-4 p-3">
                 <div class="bg-white ">
                     <img class="w-full" src=${previewURL} alt={tags} />
                     <div class="p-4">
-                        <p class="card-text">${likes} Me Gusta</p>
-                        <p class="card-text">${views} Vistas </p>
-        
+                        <p class="card-text">Propietario: ${user}</p>
+                        <p class="card-text">Me Gusta: ${likes}</p>
+                        <p class="card-text">Comentarios: ${comments}</p>
+                        <p class="card-text">Vistas: ${views}</p>
+                        <p class="card-text">Descargas: ${downloads}</p>
+                        
                         <a href=${largeImageURL} 
                         rel="noopener noreferrer" 
                         target="_blank" class="bg-blue-800 w-full p-1 block mt-5 rounded text-center font-bold uppercase hover:bg-blue-500 text-white">Ver Imagen</a>

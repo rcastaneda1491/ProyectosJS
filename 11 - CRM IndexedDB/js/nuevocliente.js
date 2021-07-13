@@ -32,11 +32,12 @@
 
 
         const nombre = document.querySelector('#nombre').value;
+        const nacionalidad = document.querySelector('#nacionalidad').value;
         const email = document.querySelector('#email').value;
         const telefono = document.querySelector('#telefono').value;
         const empresa = document.querySelector('#empresa').value;
 
-        if(nombre === '' || email === '' || telefono === '' || empresa === '') {
+        if(nombre === '' || nacionalidad === ''|| email === '' || telefono === '' || empresa === '') {
              
 
             return;
@@ -47,6 +48,7 @@
 
         const cliente = {
             nombre, 
+            nacionalidad,
             email,
             telefono,
             empresa
