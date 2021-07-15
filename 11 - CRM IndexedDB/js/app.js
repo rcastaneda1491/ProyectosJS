@@ -18,9 +18,7 @@
         if (e.target.classList.contains('eliminar')) {
             const idEliminar = Number( e.target.dataset.cliente);
             
-            const confirmar = confirm('¿Desea eliminar este cliente?')
-
-            if(confirmar){
+            
                 const transaction = DB.transaction(['crm'], 'readwrite');
                 const objectStore = transaction.objectStore('crm');
 
@@ -35,7 +33,6 @@
                 transaction.onerror = function(){
                     console.log('Hubo Error')
                 }
-            }
         };
     }
     
