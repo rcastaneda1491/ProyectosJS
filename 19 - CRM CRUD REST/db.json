@@ -1,0 +1,12 @@
+{
+  "clientes": [
+    {
+      "nombre": "Rogelio",
+      "nacionalidad": "Guatemalteco",
+      "email": "rcastaneda1491@gmail.com",
+      "telefono": "5896586",
+      "empresa": "Plus TI",
+      "id": 1
+    }
+  ]
+}
